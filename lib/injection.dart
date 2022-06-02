@@ -23,9 +23,16 @@ void init() {
     ),
   );
 
-  // data source
-  locator.registerLazySingleton<RemoteDataSource>(
+  // data source jika pake weather model
+  /* locator.registerLazySingleton<RemoteDataSource>(
     () => RemoteDataSourceImpl(
+      client: locator(),
+    ),
+  ); */
+
+  //data source jika pake cuaca model */
+  locator.registerLazySingleton<RemoteDataSource>(
+    () => RemoteDataSourceCuacaImpl(
       client: locator(),
     ),
   );

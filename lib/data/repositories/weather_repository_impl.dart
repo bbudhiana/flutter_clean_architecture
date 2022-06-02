@@ -1,11 +1,12 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter_clean_architecture/data/datasources/remote_data_source.dart';
-import 'package:flutter_clean_architecture/data/exception.dart';
-import 'package:flutter_clean_architecture/domain/entites/weather.dart';
-import 'package:flutter_clean_architecture/data/failure.dart';
-import 'package:flutter_clean_architecture/domain/repositories/weather_repository.dart';
+
+import '../../domain/entites/weather.dart';
+import '../../domain/repositories/weather_repository.dart';
+import '../datasources/remote_data_source.dart';
+import '../exception.dart';
+import '../failure.dart';
 
 class WeatherRepositoryImpl implements WeatherRepository {
   final RemoteDataSource remoteDataSource;
