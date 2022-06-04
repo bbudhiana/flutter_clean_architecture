@@ -80,7 +80,7 @@ void main() {
     test(
       'should return connection failure when the device has no internet',
       () async {
-        // arrange
+        // arrange : ketika datang request getCurrentWeather maka kasih SockeException (error tidak ada internet)
         when(mockRemoteDataSource.getCurrentWeather(tCityName)).thenThrow(
             const SocketException('Failed to connect to the network'));
 
