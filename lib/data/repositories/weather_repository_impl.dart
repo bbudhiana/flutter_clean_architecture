@@ -22,7 +22,7 @@ class WeatherRepositoryImpl implements WeatherRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed to coonnect to the network'));
+      return const Left(ConnectionFailure('Failed to connect to the network'));
     }
   }
 }
