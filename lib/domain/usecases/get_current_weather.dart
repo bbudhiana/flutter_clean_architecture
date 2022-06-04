@@ -1,3 +1,4 @@
+//merupakan abstract kelas yang akan di implementasikan di layer presentation
 import 'package:dartz/dartz.dart';
 
 import '../../data/failure.dart';

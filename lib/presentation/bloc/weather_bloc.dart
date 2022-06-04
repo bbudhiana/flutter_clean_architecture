@@ -1,3 +1,4 @@
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -30,7 +31,16 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
           },
         );
       },
-      transformer: debounce(const Duration(microseconds: 500)),
+      //restarable milik bloc_concurency
+      //Using restartable() is a great way to keep your state up to date
+      //with events that might still be processing when another event of the same type is added
+      //Don't use it, however, if the value of previous results is important to your bloc!
+      //We're using restartable() on the Load URL event so that only the latest loading
+      //event will ever emit states, keeping our state nice and clean
+      transformer: restartable(),
+      //By debouncing, we mean that the bloc will only actually fire an event
+      //if an event of the same type hasn't fired within a given duration
+      //transformer: debounce(const Duration(microseconds: 1000)),
     );
   }
 
