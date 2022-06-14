@@ -8,7 +8,9 @@ import '../datasources/remote_data_source.dart';
 import '../exception.dart';
 import '../failure.dart';
 
+//bentuk implementasi dari WeatherRepository dengan datasource remoteDataSource
 class WeatherRepositoryImpl implements WeatherRepository {
+  //parameter berupa abstract class or interface, dengan info implementasi dari injection.dart
   final RemoteDataSource remoteDataSource;
   WeatherRepositoryImpl({
     required this.remoteDataSource,

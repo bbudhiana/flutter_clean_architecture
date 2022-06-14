@@ -30,7 +30,8 @@ void init() {
     ),
   ); */
 
-  //data source jika pake cuaca model */
+  //data source jika pake cuaca model
+  //bacanya : jika ada menggunakan yang RemoteDataSource maka yg dipakai adalah RemoteDataSourceCuacaImpl
   locator.registerLazySingleton<RemoteDataSource>(
     () => RemoteDataSourceCuacaImpl(
       client: locator(),
